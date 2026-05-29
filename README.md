@@ -4,6 +4,8 @@
 
 # tkchart
 
+**A Python library for creating live-updating line charts in Tkinter.**
+
 [![PyPI version](https://badge.fury.io/py/tkchart.svg)](https://pypi.org/project/tkchart/)
 
 [![Downloads](https://static.pepy.tech/badge/tkchart)](https://pepy.tech/project/tkchart)
@@ -12,8 +14,6 @@
 [![Downloads/Week](https://static.pepy.tech/badge/tkchart/week)](https://pepy.tech/project/tkchart)
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-
-**A Python library for creating live-updating line charts in Tkinter.**
 
 </div>
 
