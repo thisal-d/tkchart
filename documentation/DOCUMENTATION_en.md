@@ -107,6 +107,44 @@ linechart = tkchart.LineChart()
 | Method                     | Description                              | Supported / Required Parameters                                                                                                  | Return Type | 
 |----------------------------|------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|-------------| 
 | configure                  | Change LineChart attributes              | All attributes except for master                                                                                                 | ``None``    | 
+| configure_width | Configure the width of the chart | width: `int` | `None` |
+| configure_height | Configure the height of the chart | height: `int` | `None` |
+| configure_axis_size | Configure the size of the axis | axis_size: `int` | `None` |
+| configure_bg_color | Configure the background color of the chart | bg_color: `str` | `None` |
+| configure_fg_color | Configure the foreground color of the chart | fg_color: `str` | `None` |
+| configure_axis_color | Configure the color of the axis | axis_color: `str` | `None` |
+| configure_data_font_style | Configure the font style for data labels | data_font_style: `tuple[str, int, str]` | `None` |
+| configure_axis_font_style | Configure the font style for axis labels | axis_font_style: `tuple[str, int, str]` | `None` |
+| configure_y_axis_values | Configure the minimum and maximum values for y-axis | y_axis_values: `tuple[int \| float, ...]` | `None` |
+| configure_y_axis_precision | Configure the precision for y-axis values | y_axis_precision: `int` | `None` |
+| configure_y_axis_font_color | Configure the font color for y-axis labels | y_axis_font_color: `str` | `None` |
+| configure_y_axis_data_font_color | Configure the font color for y-axis data label | y_axis_data_font_color: `str` | `None` |
+| configure_y_axis_label_count | Configure the number of y-axis labels | y_axis_label_count: `int` | `None` |
+| configure_y_axis_data | Configure the value for y-axis data label | y_axis_data: `any` | `None` |
+| configure_y_axis_data_position | Configure the position of y-axis data label | y_axis_data_position: `str` | `None` |
+| configure_y_axis_section_count | Configure the number of sections on the y-axis | y_axis_section_count: `int` | `None` |
+| configure_y_axis_section_color | Configure the color of sections on the y-axis | y_axis_section_color: `str` | `None` |
+| configure_y_axis_section_style | Configure the style of sections on the y-axis | y_axis_section_style: `str` | `None` |
+| configure_y_axis_section_style_type | Configure the style type for sections on the y-axis | y_axis_section_style_type: `tuple[int, int]` | `None` |
+| configure_y_space | Configure the space between y-axis and chart area | y_space: `int` | `None` |
+| configure_x_axis_data | Configure the data label for x-axis | x_axis_data: `str` | `None` |
+| configure_x_axis_data_position | Configure the position of x-axis data label | x_axis_data_position: `str` | `None` |
+| configure_x_axis_font_color | Configure the font color for x-axis labels | x_axis_font_color: `str` | `None` |
+| configure_x_axis_data_font_color | Configure the font color for x-axis data label | x_axis_data_font_color: `str` | `None` |
+| configure_x_axis_label_count | Configure the number of x-axis labels | x_axis_label_count: `int` | `None` |
+| configure_x_axis_section_count | Configure the number of sections on the x-axis | x_axis_section_count: `int` | `None` |
+| configure_x_axis_section_color | Configure the color of sections on the x-axis | x_axis_section_color: `str` | `None` |
+| configure_x_axis_section_style | Configure the style of sections on the x-axis | x_axis_section_style: `str` | `None` |
+| configure_x_axis_section_style_type | Configure the style type for sections on the x-axis | x_axis_section_style_type: `tuple[int, int]` | `None` |
+| configure_x_axis_display_values_indices | Configure the indices of values to display on the x-axis | x_axis_display_values_indices: `tuple[int, ...]` | `None` |
+| configure_x_axis_point_spacing | Configure the spacing between points on the x-axis | x_axis_point_spacing: `int \| str` | `None` |
+| configure_x_space | Configure the space between x-axis and chart area | x_space: `int` | `None` |
+| configure_pointer_state | Configure the state of the pointer | pointer_state: `str` | `None` |
+| configure_pointer_color | Configure the color of the pointer | pointer_color: `str` | `None` |
+| configure_pointer_size | Configure the size of the pointer | pointer_size: `int` | `None` |
+| configure_pointer_lock | Configure the state of pointer lock | pointer_lock: `str` | `None` |
+| configure_pointing_values_precision | Configure the precision for pointing values | pointing_values_precision: `int` | `None` |
+| configure_pointing_callback_function | Configure the callback function for pointer | pointing_callback_function: `callable` | `None` |
 | [show_data](#display-data) | Display data                             | data: ``list``<br> line: ``tkchart.Line``                                                                                        | ``None``    | 
 | place                      | Place LineChart                          | x: ``int``<br>y: ``int``<br>rely: ``float or int``<br>relx: ``float or int``<br>anchor: ``str``                                  | ``None``    | 
 | pack                       | Pack LineChart                           | pady: ``int``<br>padx: ``int``<br> before: ``widget``<br> after: ``widget``<br>side: ``str``<br>anchor: ``str``                  | ``None``    | 
@@ -167,7 +205,16 @@ line = tkchart.Line()
 
 | Method         | Description                              | Supported Parameters                     | Return Type | 
 |----------------|------------------------------------------|------------------------------------------|-------------| 
-| configure      | Change LineChart attributes              | All attributes except for master         | ``None``    | 
+| configure      | Change Line attributes                   | All attributes except for master         | ``None``    | 
+| configure_color | Configure the color of the line | color: `str` | `None` |
+| configure_size | Configure the size of the line | size: `int` | `None` |
+| configure_style | Configure the style of the line | style: `str` | `None` |
+| configure_style_type | Configure the style type for the line | style_type: `tuple[int, int]` | `None` |
+| configure_point_highlight | Configure the state of point highlighting | point_highlight: `str` | `None` |
+| configure_point_highlight_size | Configure the size of the highlighted point | point_highlight_size: `int` | `None` |
+| configure_point_highlight_color | Configure the color of the highlighted point | point_highlight_color: `str` | `None` |
+| configure_fill | Configure the state of filling | fill: `str` | `None` |
+| configure_fill_color | Configure the color of the fill | fill_color: `str` | `None` |
 | cget           | Get the value of the specified parameter | attribute_name: ``str`` \| "\_\_all\_\_" | ``any``     | 
 | reset          | reset line object                        | -                                        | ``None``    | 
 | set_visible    | change the visibility of the line        | state: ``bool``                          | ``None``    | 

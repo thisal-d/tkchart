@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='tkchart',  # Replace with your package name
-    version='2.1.8',  # Replace with your package version
+    version='2.2.0',  # Replace with your package version
     author='Thisal-D',  # Replace with your name
     author_email='',  # Replace with your email
     description='Python library for creating live updating line charts in Tkinter.',

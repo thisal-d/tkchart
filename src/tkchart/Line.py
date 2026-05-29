@@ -366,3 +366,109 @@ class Line:
             pass  # In case the line is not in the list
         finally:
             self.__del__()
+
+    # -------------------------------------------------------------------------
+    # Individual configure_* methods
+    # Each method configures exactly one attribute by delegating to configure().
+    # The existing configure() method is NOT modified.
+    # -------------------------------------------------------------------------
+
+    def configure_color(self, color: str) -> None:
+        """Configure the color of the line.
+
+        Args:
+            color (str): A valid Tkinter/hex color string (e.g. ``"#ff0000"``).
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(color=color)
+
+    def configure_size(self, size: int) -> None:
+        """Configure the thickness of the line in pixels.
+
+        Args:
+            size (int): Line thickness in pixels (e.g. 1, 2, 4).
+
+        Raises:
+            TypeError: If size is not an integer.
+        """
+        self.configure(size=size)
+
+    def configure_style(self, style: "Literal['normal', 'dashed', 'dotted']") -> None:
+        """Configure the drawing style of the line.
+
+        Args:
+            style (str): One of ``"normal"``, ``"dashed"``, or ``"dotted"``.
+
+        Raises:
+            ValueError: If the value is not one of the accepted styles.
+        """
+        self.configure(style=style)
+
+    def configure_style_type(self, style_type: "Tuple[int, int]") -> None:
+        """Configure the dash/dot size and gap for dashed or dotted lines.
+
+        Args:
+            style_type (Tuple[int, int]): A tuple of ``(segment_size, gap_size)``
+                in pixels. Applies only when ``style`` is ``"dashed"`` or ``"dotted"``.
+
+        Raises:
+            TypeError: If the tuple does not match the expected format.
+        """
+        self.configure(style_type=style_type)
+
+    def configure_point_highlight(self, point_highlight: "Literal['enabled', 'disabled']") -> None:
+        """Configure whether data-point highlight circles are drawn.
+
+        Args:
+            point_highlight (str): Either ``"enabled"`` or ``"disabled"``.
+
+        Raises:
+            ValueError: If the value is not ``"enabled"`` or ``"disabled"``.
+        """
+        self.configure(point_highlight=point_highlight)
+
+    def configure_point_highlight_size(self, point_highlight_size: int) -> None:
+        """Configure the diameter of the point highlight circles.
+
+        Args:
+            point_highlight_size (int): Diameter in pixels.
+
+        Raises:
+            TypeError: If point_highlight_size is not an integer.
+        """
+        self.configure(point_highlight_size=point_highlight_size)
+
+    def configure_point_highlight_color(self, point_highlight_color: str) -> None:
+        """Configure the fill color of the point highlight circles.
+
+        Args:
+            point_highlight_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(point_highlight_color=point_highlight_color)
+
+    def configure_fill(self, fill: "Literal['enabled', 'disabled']") -> None:
+        """Configure whether the area below the line is filled.
+
+        Args:
+            fill (str): Either ``"enabled"`` or ``"disabled"``.
+
+        Raises:
+            ValueError: If the value is not ``"enabled"`` or ``"disabled"``.
+        """
+        self.configure(fill=fill)
+
+    def configure_fill_color(self, fill_color: str) -> None:
+        """Configure the fill color of the area below the line.
+
+        Args:
+            fill_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(fill_color=fill_color)
