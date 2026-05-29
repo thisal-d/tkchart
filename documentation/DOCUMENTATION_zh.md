@@ -112,6 +112,44 @@ linechart = tkchart.LineChart()
 | 方法                         | 描述                  | 支持的参数 / 必须的参数                                                                                                                    | 返回类型     | 
 |----------------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------|----------| 
 | configure                  | 更改 LineChart（折线图）属性 | 所有属性，除了 master                                                                                                                   | ``None`` | 
+| configure_width | 配置折线图的宽度 | width: `int` | `None` |
+| configure_height | 配置折线图的高度 | height: `int` | `None` |
+| configure_axis_size | 配置坐标轴宽度 | axis_size: `int` | `None` |
+| configure_bg_color | 配置折线图的背景色 | bg_color: `str` | `None` |
+| configure_fg_color | 配置折线图的前景色 | fg_color: `str` | `None` |
+| configure_axis_color | 配置坐标轴轴颜色 | axis_color: `str` | `None` |
+| configure_data_font_style | 配置坐标轴名称的字体样式 | data_font_style: `Tuple[str, int, str]` | `None` |
+| configure_axis_font_style | 配置坐标轴文字的字体样式 | axis_font_style: `Tuple[str, int, str]` | `None` |
+| configure_y_axis_values | 配置 y 轴的最小值和最大值 | y_axis_values: `Tuple[int \| float, ...]` | `None` |
+| configure_y_axis_precision | 配置 y 轴值的精度 | y_axis_precision: `int` | `None` |
+| configure_y_axis_font_color | 配置 y 轴标签的字体颜色 | y_axis_font_color: `str` | `None` |
+| configure_y_axis_data_font_color | 配置 y_data 的字体颜色 | y_axis_data_font_color: `str` | `None` |
+| configure_y_axis_label_count | 配置 y 轴标签数量 | y_axis_label_count: `int` | `None` |
+| configure_y_axis_data | 配置 y_data 的值（y 坐标轴名称） | y_axis_data: `any` | `None` |
+| configure_y_axis_data_position | 配置 y_data 的排布方式 | y_axis_data_position: `str` | `None` |
+| configure_y_axis_section_count | 配置 y 轴上的网格线数 | y_axis_section_count: `int` | `None` |
+| configure_y_axis_section_color | 配置 y 轴上网格线的颜色 | y_axis_section_color: `str` | `None` |
+| configure_y_axis_section_style | 配置 y 轴上的网格线样式 | y_axis_section_style: `str` | `None` |
+| configure_y_axis_section_style_type | 配置 y 轴上网格线的实线与空白的尺寸 | y_axis_section_style_type: `Tuple[int, int]` | `None` |
+| configure_y_space | 配置 y 轴和图表区域之间的空间 | y_space: `int` | `None` |
+| configure_x_axis_data | 配置 x_data 的值（x 坐标轴名称） | x_axis_data: `str` | `None` |
+| configure_x_axis_data_position | 配置 x_data 的排布方式 | x_axis_data_position: `str` | `None` |
+| configure_x_axis_font_color | 配置 x 轴标签的字体颜色 | x_axis_font_color: `str` | `None` |
+| configure_x_axis_data_font_color | 配置 x_data 的字体颜色 | x_axis_data_font_color: `str` | `None` |
+| configure_x_axis_label_count | 配置 x 轴标签数量 | x_axis_label_count: `int` | `None` |
+| configure_x_axis_section_count | 配置 x 轴上的网格线数 | x_axis_section_count: `int` | `None` |
+| configure_x_axis_section_color | 配置 x 轴上网格线的颜色 | x_axis_section_color: `str` | `None` |
+| configure_x_axis_section_style | 配置 x 轴上的网格线样式 | x_axis_section_style: `str` | `None` |
+| configure_x_axis_section_style_type | 配置 x 轴上网格线的实线与空白的尺寸 | x_axis_section_style_type: `Tuple[int, int]` | `None` |
+| configure_x_axis_display_values_indices | 配置显示在 x 轴上的坐标值的索引 | x_axis_display_values_indices: `Tuple[int, ...]` | `None` |
+| configure_x_axis_point_spacing | 配置线条宽度 | x_axis_point_spacing: `int \| str` | `None` |
+| configure_x_space | 配置 x 轴和图表区域之间的空间 | x_space: `int` | `None` |
+| configure_pointer_state | 配置鼠标状态 | pointer_state: `str` | `None` |
+| configure_pointer_color | 配置鼠标颜色 | pointer_color: `str` | `None` |
+| configure_pointer_size | 配置鼠标显示线的宽度 | pointer_size: `int` | `None` |
+| configure_pointer_lock | 配置鼠标锁状态 | pointer_lock: `str` | `None` |
+| configure_pointing_values_precision | 配置指向值的精度 | pointing_values_precision: `int` | `None` |
+| configure_pointing_callback_function | 配置鼠标的回调函数 | pointing_callback_function: `callable` | `None` |
 | [show_data](#display-data) | 显示数据                | data: ``list``<br> line: ``chart.Line``                                                                                          | ``None`` | 
 | place                      | 放置 (place) 折线图      | x: ``int``<br>y: ``int``<br>rely: ``float or int``<br>relx: ``float or int``<br>anchor: ``str``                                  | ``None`` | 
 | pack                       | 放置 (pack) 折线图       | pady: ``int``<br>padx: ``int``<br> before: ``widget``<br> after: ``widget``<br>side: ``str``<br>anchor: ``str``                  | ``None`` | 
@@ -172,7 +210,16 @@ line = tkchart.Line()
 
 | 方法             | 描述       | 支持的参数                                    | 返回类型     | 
 |----------------|----------|------------------------------------------|----------| 
-| configure      | 更改折线图属性  | 所有属性，除了 master                           | ``None`` | 
+| configure      | 更改折线属性  | 所有属性，除了 master                           | ``None`` | 
+| configure_color | 配置折线颜色 | color: `str` | `None` |
+| configure_size | 配置折线大小 | size: `int` | `None` |
+| configure_style | 配置折线样式（普通、虚线、点线） | style: `str` | `None` |
+| configure_style_type | 配置实线与虚线尺寸 | style_type: `Tuple[int, int]` | `None` |
+| configure_point_highlight | 配置端点高亮状态 | point_highlight: `str` | `None` |
+| configure_point_highlight_size | 配置高亮点大小 | point_highlight_size: `int` | `None` |
+| configure_point_highlight_color | 配置高亮点颜色 | point_highlight_color: `str` | `None` |
+| configure_fill | 配置是否启用填充 | fill: `str` | `None` |
+| configure_fill_color | 配置填充颜色 | fill_color: `str` | `None` |
 | cget           | 获取指定参数的值 | attribute_name: ``str`` \| "\_\_all\_\_" | ``any``  | 
 | reset          | 重置线对象    | -                                        | ``None`` | 
 | set_visible    | 改变线条的可见度 | state: ``bool``                          | ``None`` | 
