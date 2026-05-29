@@ -16,7 +16,7 @@
 
 ---
 
-![Video 1](readme-assets\chart.mp4)
+![Video 1](readme-assets/chart.mp4)
 
 ---
 
