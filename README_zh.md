@@ -5,10 +5,12 @@
 # tkchart
 
 [![PyPI version](https://badge.fury.io/py/tkchart.svg)](https://pypi.org/project/tkchart/)
+
 [![Downloads](https://static.pepy.tech/badge/tkchart)](https://pepy.tech/project/tkchart)
 ![Downloads last 6 month](https://static.pepy.tech/personalized-badge/tkchart?period=total&units=international_system&left_color=grey&right_color=BLUE&left_text=downloads%20last%206%20month)
 [![Downloads/Month](https://static.pepy.tech/badge/tkchart/month)](https://pepy.tech/project/tkchart)
 [![Downloads/Week](https://static.pepy.tech/badge/tkchart/week)](https://pepy.tech/project/tkchart)
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 **用于在 Tkinter 中创建实时更新折线图的 Python 库。**
@@ -23,13 +25,13 @@ https://github.com/Thisal-D/ctkchart/assets/93121062/6f1e844f-d51c-467a-a3dc-ee0
 
 ## ✨ 特性
 
-| 特性 | 描述 |
-|---|---|
-| ⚡ **实时更新** | 持续流式显示实时数据 |
-| 📉 **多条折线** | 在同一图表中绘制多条线，便于对比 |
-| 🎨 **颜色自定义** | 根据应用程序设计自定义颜色 |
-| 🔤 **字体自定义** | 调整文字字体以提高可读性 |
-| 📐 **尺寸控制** | 调整图表大小以适应任何布局 |
+| 特性              | 描述                                         |
+| ----------------- | -------------------------------------------- |
+| ⚡ **实时更新**   | 持续流式显示实时数据                         |
+| 📉 **多条折线**   | 在同一图表中绘制多条线，便于对比             |
+| 🎨 **颜色自定义** | 根据应用程序设计自定义颜色                   |
+| 🔤 **字体自定义** | 调整文字字体以提高可读性                     |
+| 📐 **尺寸控制**   | 调整图表大小以适应任何布局                   |
 | 🎛️ **细粒度配置** | 通过 `configure_*()` 方法精确控制（v2.2.0+） |
 
 > 📋 [**查看最新版本的变更记录 →**](CHANGES_zh.md)
@@ -119,6 +121,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 ---
@@ -159,6 +162,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 ---
@@ -201,6 +205,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 ---
@@ -245,6 +250,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 ---
@@ -289,6 +295,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 ---
