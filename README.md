@@ -14,10 +14,6 @@
 
 ---
 
-![Video 1](readme-assets/chart.mp4)
-
----
-
 ### Features
 
 - **Live Update**: Display live data with line charts.
