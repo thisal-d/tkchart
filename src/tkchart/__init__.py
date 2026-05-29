@@ -19,7 +19,7 @@ SIDE = "side"
 AUTO = "auto"
 
 __title__ = "tkchart"
-__version__ = "2.1.8"
+__version__ = "2.2.0"
 __authors__ = ("Thisal Dilmith", "childeyouyu (有语)")
 
 __all__ = [

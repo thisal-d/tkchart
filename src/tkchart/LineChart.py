@@ -2395,3 +2395,445 @@ class LineChart:
             line.destroy()
 
         self.__del__()
+
+    # -------------------------------------------------------------------------
+    # Individual configure_* methods
+    # Each method configures exactly one attribute by delegating to configure().
+    # The existing configure() method is NOT modified.
+    # -------------------------------------------------------------------------
+
+    def configure_width(self, width: int) -> None:
+        """Configure the width of the LineChart widget.
+
+        Args:
+            width (int): New width in pixels.
+
+        Raises:
+            TypeError: If width is not an integer.
+        """
+        self.configure(width=width)
+
+    def configure_height(self, height: int) -> None:
+        """Configure the height of the LineChart widget.
+
+        Args:
+            height (int): New height in pixels.
+
+        Raises:
+            TypeError: If height is not an integer.
+        """
+        self.configure(height=height)
+
+    def configure_axis_size(self, axis_size: int) -> None:
+        """Configure the thickness/size of the axis lines.
+
+        Args:
+            axis_size (int): New axis size in pixels.
+
+        Raises:
+            TypeError: If axis_size is not an integer.
+        """
+        self.configure(axis_size=axis_size)
+
+    def configure_x_axis_point_spacing(self, x_axis_point_spacing: Union[int, Literal["auto"]]) -> None:
+        """Configure the spacing between data points on the x-axis.
+
+        Args:
+            x_axis_point_spacing (Union[int, str]): Pixel spacing between points, or ``"auto"``
+                to let the chart calculate it automatically.
+
+        Raises:
+            TypeError: If the value is not an integer or ``"auto"``.
+        """
+        self.configure(x_axis_point_spacing=x_axis_point_spacing)
+
+    def configure_bg_color(self, bg_color: str) -> None:
+        """Configure the background color of the LineChart widget.
+
+        Args:
+            bg_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(bg_color=bg_color)
+
+    def configure_axis_color(self, axis_color: str) -> None:
+        """Configure the color of the axis lines.
+
+        Args:
+            axis_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(axis_color=axis_color)
+
+    def configure_fg_color(self, fg_color: str) -> None:
+        """Configure the foreground (plot area) color of the LineChart widget.
+
+        Args:
+            fg_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(fg_color=fg_color)
+
+    def configure_data_font_style(self, data_font_style: Tuple[str, int, str]) -> None:
+        """Configure the font style used for axis data labels (e.g. \"X\", \"Y\" labels).
+
+        Args:
+            data_font_style (Tuple[str, int, str]): A tuple of (family, size, weight),
+                e.g. ``("arial", 10, "bold")``.
+
+        Raises:
+            TypeError: If the tuple does not match the expected font format.
+        """
+        self.configure(data_font_style=data_font_style)
+
+    def configure_axis_font_style(self, axis_font_style: Tuple[str, int, str]) -> None:
+        """Configure the font style used for axis value labels (tick labels).
+
+        Args:
+            axis_font_style (Tuple[str, int, str]): A tuple of (family, size, weight),
+                e.g. ``("arial", 8, "normal")``.
+
+        Raises:
+            TypeError: If the tuple does not match the expected font format.
+        """
+        self.configure(axis_font_style=axis_font_style)
+
+    def configure_y_axis_values(self, y_axis_values: Tuple[Union[int, float], Union[int, float]]) -> None:
+        """Configure the minimum and maximum values displayed on the y-axis.
+
+        Args:
+            y_axis_values (Tuple[Union[int, float], Union[int, float]]): A tuple of
+                ``(min_value, max_value)``.
+
+        Raises:
+            ValueError: If the tuple is invalid.
+        """
+        self.configure(y_axis_values=y_axis_values)
+
+    def configure_y_axis_precision(self, y_axis_precision: int) -> None:
+        """Configure the decimal precision of y-axis value labels.
+
+        Args:
+            y_axis_precision (int): Number of decimal places (0 = integers).
+
+        Raises:
+            TypeError: If y_axis_precision is not an integer.
+        """
+        self.configure(y_axis_precision=y_axis_precision)
+
+    def configure_y_axis_font_color(self, y_axis_font_color: str) -> None:
+        """Configure the color of y-axis tick (value) labels.
+
+        Args:
+            y_axis_font_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(y_axis_font_color=y_axis_font_color)
+
+    def configure_y_axis_data_font_color(self, y_axis_data_font_color: str) -> None:
+        """Configure the color of the y-axis data title label.
+
+        Args:
+            y_axis_data_font_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(y_axis_data_font_color=y_axis_data_font_color)
+
+    def configure_y_axis_section_count(self, y_axis_section_count: int) -> None:
+        """Configure the number of horizontal grid sections on the y-axis.
+
+        Args:
+            y_axis_section_count (int): Number of sections (0 disables sections).
+
+        Raises:
+            TypeError: If y_axis_section_count is not an integer.
+        """
+        self.configure(y_axis_section_count=y_axis_section_count)
+
+    def configure_y_axis_section_color(self, y_axis_section_color: str) -> None:
+        """Configure the color of y-axis grid section lines.
+
+        Args:
+            y_axis_section_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(y_axis_section_color=y_axis_section_color)
+
+    def configure_y_axis_section_style(self, y_axis_section_style: Literal["normal", "dashed"]) -> None:
+        """Configure the style of y-axis grid section lines.
+
+        Args:
+            y_axis_section_style (str): Either ``"normal"`` or ``"dashed"``.
+
+        Raises:
+            ValueError: If the value is not ``"normal"`` or ``"dashed"``.
+        """
+        self.configure(y_axis_section_style=y_axis_section_style)
+
+    def configure_y_axis_section_style_type(self, y_axis_section_style_type: Tuple[int, int]) -> None:
+        """Configure the dash width and gap for dashed y-axis sections.
+
+        Args:
+            y_axis_section_style_type (Tuple[int, int]): A tuple of
+                ``(dash_width, gap_width)`` in pixels.
+
+        Raises:
+            TypeError: If the tuple does not match the expected format.
+        """
+        self.configure(y_axis_section_style_type=y_axis_section_style_type)
+
+    def configure_y_axis_label_count(self, y_axis_label_count: int) -> None:
+        """Configure the number of value labels shown on the y-axis.
+
+        Args:
+            y_axis_label_count (int): Number of y-axis labels (0 hides all labels).
+
+        Raises:
+            TypeError: If y_axis_label_count is not an integer.
+        """
+        self.configure(y_axis_label_count=y_axis_label_count)
+
+    def configure_y_axis_data(self, y_axis_data: Any) -> None:
+        """Configure the title/label text for the y-axis.
+
+        Args:
+            y_axis_data (Any): The label text (will be converted to string).
+        """
+        self.configure(y_axis_data=y_axis_data)
+
+    def configure_y_axis_data_position(self, y_axis_data_position: Literal["top", "side"]) -> None:
+        """Configure the position of the y-axis title label.
+
+        Args:
+            y_axis_data_position (str): Either ``"top"`` (above the y-axis) or
+                ``"side"`` (beside the y-axis).
+
+        Raises:
+            ValueError: If the value is not ``"top"`` or ``"side"``.
+        """
+        self.configure(y_axis_data_position=y_axis_data_position)
+
+    def configure_y_space(self, y_space: int) -> None:
+        """Configure the extra vertical space between the y-axis and the plot area.
+
+        Args:
+            y_space (int): Space in pixels.
+
+        Raises:
+            TypeError: If y_space is not an integer.
+        """
+        self.configure(y_space=y_space)
+
+    def configure_x_axis_values(self, x_axis_values: Tuple[Any, ...]) -> None:
+        """Configure the values/labels displayed on the x-axis.
+
+        Args:
+            x_axis_values (Tuple[Any, ...]): A tuple of x-axis label values.
+
+        Raises:
+            ValueError: If the tuple format is invalid.
+        """
+        self.configure(x_axis_values=x_axis_values)
+
+    def configure_x_axis_data(self, x_axis_data: Any) -> None:
+        """Configure the title/label text for the x-axis.
+
+        Args:
+            x_axis_data (Any): The label text (will be converted to string).
+        """
+        self.configure(x_axis_data=x_axis_data)
+
+    def configure_x_axis_font_color(self, x_axis_font_color: str) -> None:
+        """Configure the color of x-axis tick (value) labels.
+
+        Args:
+            x_axis_font_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(x_axis_font_color=x_axis_font_color)
+
+    def configure_x_axis_data_font_color(self, x_axis_data_font_color: str) -> None:
+        """Configure the color of the x-axis data title label.
+
+        Args:
+            x_axis_data_font_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(x_axis_data_font_color=x_axis_data_font_color)
+
+    def configure_x_axis_label_count(self, x_axis_label_count: int) -> None:
+        """Configure the number of labels shown on the x-axis.
+
+        Args:
+            x_axis_label_count (int): Number of x-axis labels (0 hides all labels).
+
+        Raises:
+            TypeError: If x_axis_label_count is not an integer.
+        """
+        self.configure(x_axis_label_count=x_axis_label_count)
+
+    def configure_x_axis_section_count(self, x_axis_section_count: int) -> None:
+        """Configure the number of vertical grid sections on the x-axis.
+
+        Args:
+            x_axis_section_count (int): Number of sections (0 disables sections).
+
+        Raises:
+            TypeError: If x_axis_section_count is not an integer.
+        """
+        self.configure(x_axis_section_count=x_axis_section_count)
+
+    def configure_x_axis_section_style(self, x_axis_section_style: Literal["normal", "dashed"]) -> None:
+        """Configure the style of x-axis grid section lines.
+
+        Args:
+            x_axis_section_style (str): Either ``"normal"`` or ``"dashed"``.
+
+        Raises:
+            ValueError: If the value is not ``"normal"`` or ``"dashed"``.
+        """
+        self.configure(x_axis_section_style=x_axis_section_style)
+
+    def configure_x_axis_section_style_type(self, x_axis_section_style_type: Tuple[int, int]) -> None:
+        """Configure the dash height and gap for dashed x-axis sections.
+
+        Args:
+            x_axis_section_style_type (Tuple[int, int]): A tuple of
+                ``(dash_height, gap_height)`` in pixels.
+
+        Raises:
+            TypeError: If the tuple does not match the expected format.
+        """
+        self.configure(x_axis_section_style_type=x_axis_section_style_type)
+
+    def configure_x_axis_section_color(self, x_axis_section_color: str) -> None:
+        """Configure the color of x-axis grid section lines.
+
+        Args:
+            x_axis_section_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(x_axis_section_color=x_axis_section_color)
+
+    def configure_x_axis_display_values_indices(
+            self, x_axis_display_values_indices: Tuple[int, ...]
+    ) -> None:
+        """Configure which x-axis value indices are displayed as labels.
+
+        Args:
+            x_axis_display_values_indices (Tuple[int, ...]): A tuple of integer indices
+                into ``x_axis_values`` that should be displayed.
+
+        Raises:
+            ValueError: If any index is out of range for the current x_axis_values.
+        """
+        self.configure(x_axis_display_values_indices=x_axis_display_values_indices)
+
+    def configure_x_axis_data_position(self, x_axis_data_position: Literal["top", "side"]) -> None:
+        """Configure the position of the x-axis title label.
+
+        Args:
+            x_axis_data_position (str): Either ``"top"`` (right end) or ``"side"`` (below).
+
+        Raises:
+            ValueError: If the value is not ``"top"`` or ``"side"``.
+        """
+        self.configure(x_axis_data_position=x_axis_data_position)
+
+    def configure_x_space(self, x_space: int) -> None:
+        """Configure the extra horizontal space between the x-axis and the plot area.
+
+        Args:
+            x_space (int): Space in pixels.
+
+        Raises:
+            TypeError: If x_space is not an integer.
+        """
+        self.configure(x_space=x_space)
+
+    def configure_pointer_state(self, pointer_state: Literal["enabled", "disabled"]) -> None:
+        """Configure whether the hover pointer is enabled or disabled.
+
+        Args:
+            pointer_state (str): Either ``"enabled"`` or ``"disabled"``.
+
+        Raises:
+            ValueError: If the value is not ``"enabled"`` or ``"disabled"``.
+        """
+        self.configure(pointer_state=pointer_state)
+
+    def configure_pointing_values_precision(self, pointing_values_precision: int) -> None:
+        """Configure the decimal precision of values displayed by the hover pointer.
+
+        Args:
+            pointing_values_precision (int): Number of decimal places.
+
+        Raises:
+            TypeError: If pointing_values_precision is not an integer.
+        """
+        self.configure(pointing_values_precision=pointing_values_precision)
+
+    def configure_pointer_color(self, pointer_color: str) -> None:
+        """Configure the color of the hover pointer line.
+
+        Args:
+            pointer_color (str): A valid Tkinter/hex color string.
+
+        Raises:
+            ValueError: If the color string is not a valid color.
+        """
+        self.configure(pointer_color=pointer_color)
+
+    def configure_pointer_lock(self, pointer_lock: Literal["enabled", "disabled"]) -> None:
+        """Configure whether the pointer snaps to the nearest data point (lock) or moves freely.
+
+        Args:
+            pointer_lock (str): Either ``"enabled"`` (snap to points) or ``"disabled"`` (free).
+
+        Raises:
+            ValueError: If the value is not ``"enabled"`` or ``"disabled"``.
+        """
+        self.configure(pointer_lock=pointer_lock)
+
+    def configure_pointing_callback_function(self, pointing_callback_function: Callable) -> None:
+        """Configure the callback function invoked when the pointer moves.
+
+        The callback receives ``(x_value, [y_values...])`` as arguments.
+
+        Args:
+            pointing_callback_function (Callable): A callable with signature
+                ``(x_value, values_list)``.
+
+        Raises:
+            TypeError: If the argument is not callable.
+        """
+        self.configure(pointing_callback_function=pointing_callback_function)
+
+    def configure_pointer_size(self, pointer_size: int) -> None:
+        """Configure the width (in pixels) of the hover pointer line.
+
+        Args:
+            pointer_size (int): Pointer width in pixels.
+
+        Raises:
+            TypeError: If pointer_size is not an integer.
+        """
+        self.configure(pointer_size=pointer_size)
