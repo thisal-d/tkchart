@@ -1,16 +1,16 @@
+[![Chinese](https://img.shields.io/badge/Language-中文-red)](README_zh.md)
+
 <div align="center">
 
-# 📈 tkchart
+# tkchart
 
-[![Downloads](https://static.pepy.tech/badge/tkchart)](https://pepy.tech/project/tkchart) 
-[![Downloads last 6 month](https://static.pepy.tech/personalized-badge/tkchart?period=total&units=international_system&left_color=grey&right_color=BLUE&left_text=downloads%20last%206%20month)](https://pepy.tech/project/tkchart) 
-[![PyPI version](https://badge.fury.io/py/tkchart.svg)](https://pypi.org/project/tkchart/)
+[![Downloads](https://static.pepy.tech/badge/tkchart)](https://pepy.tech/project/tkchart) ![Downloads last 6 month](https://static.pepy.tech/personalized-badge/tkchart?period=total&units=international_system&left_color=grey&right_color=BLUE&left_text=downloads%20last%206%20month) [![Downloads](https://static.pepy.tech/badge/tkchart/month)](https://pepy.tech/project/tkchart) [![Downloads](https://static.pepy.tech/badge/tkchart/week)](https://pepy.tech/project/tkchart)
+
 ![PyPI - License](https://img.shields.io/badge/license-MIT-blue)
-[![Chinese](https://img.shields.io/badge/Language-中文-red)](NEW_README_zh.md)
-
-**tkchart is a powerful, customizable Python library for creating live-updating line charts in tkinter.**
 
 </div>
+
+**<li>tkchart is a Python library for creating live updating line charts in tkinter.</li>**
 
 ---
 
@@ -35,11 +35,13 @@
 ## 📦 Installation & Import
 
 Install via `pip`:
+
 ```bash
 pip install tkchart
 ```
 
 Import into your Python script:
+
 ```python
 import tkchart
 ```
@@ -122,6 +124,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 <details>
@@ -160,6 +163,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 <details>
@@ -201,6 +205,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 <details>
@@ -242,6 +247,7 @@ def display_data():
 threading.Thread(target=display_data, daemon=True).start()
 root.mainloop()
 ```
+
 </details>
 
 ---
